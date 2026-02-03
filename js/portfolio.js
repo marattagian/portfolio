@@ -56,17 +56,13 @@
             <div class="media-wrapper">
                 <video
                     class="hover-gif"
-                    autoplay
                     muted
                     loop
                     playsinline
-                    poster="assets/hero-poster.jpg"
                     data-src="${animatedPreview}"
+                    preload="none"
                     alt="${title} animated preview"
                     aria-hidden="true">
-                    <source src="assets/hero-video.mp4" type="video/mp4" />
-                    <source src="assets/hero-video.webm" type="video/webm" />
-                    Your browser does not support the video tag.
                 </video>
 
                 <img
@@ -97,19 +93,39 @@
     const cards = document.querySelectorAll(".project-card");
 
     cards.forEach((card) => {
-      const gif = card.querySelector(".hover-gif");
+      const video = card.querySelector(".hover-gif");
 
       // Load on first hover/focus
-      const loadGif = () => {
-        if (gif.dataset.src && !loadedGifs.has(gif)) {
-          gif.src = gif.dataset.src;
-          loadedGifs.add(gif);
-          delete gif.dataset.src;
+      const loadVideo = () => {
+        if (video.dataset.src && !loadedGifs.has(video)) {
+          // Create source element for the video
+          const source = document.createElement("source");
+          source.src = video.dataset.src;
+          source.type = video.dataset.src.endsWith(".webm")
+            ? "video/webm"
+            : "video/mp4";
+
+          video.appendChild(source);
+          video.load();
+
+          // Play when loaded
+          video.addEventListener(
+            "loadeddata",
+            () => {
+              video
+                .play()
+                .catch((err) => console.log("Video play prevented:", err));
+            },
+            { once: true },
+          );
+
+          loadedGifs.add(video);
+          delete video.dataset.src;
         }
       };
 
-      card.addEventListener("mouseenter", loadGif, { once: true });
-      card.addEventListener("focus", loadGif, { once: true });
+      card.addEventListener("mouseenter", loadVideo, { once: true });
+      card.addEventListener("focus", loadVideo, { once: true });
     });
   }
 
@@ -137,11 +153,29 @@
           lastTappedCard = this;
 
           // Load the GIF if not already loaded
-          const gif = this.querySelector(".hover-gif");
-          if (gif.dataset.src) {
-            gif.src = gif.dataset.src;
-            loadedGifs.add(gif);
-            delete gif.dataset.src;
+          const video = this.querySelector(".hover-gif");
+          if (video.dataset.src) {
+            const source = document.createElement("source");
+            source.src = video.dataset.src;
+            source.type = video.dataset.src.endsWith(".webm")
+              ? "video/webm"
+              : "video/mp4";
+
+            video.appendChild(source);
+            video.load();
+
+            video.addEventListener(
+              "loadeddata",
+              () => {
+                video
+                  .play()
+                  .catch((err) => console.log("Video play prevented:", err));
+              },
+              { once: true },
+            );
+
+            loadedGifs.add(video);
+            delete video.dataset.src;
           }
         }
         // If it already has show-info, let the video open (don't stopPropagation)

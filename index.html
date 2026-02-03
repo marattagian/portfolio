@@ -5,21 +5,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <!-- SEO Meta Tags -->
-        <meta
-            name="description"
-            content="Portfolio of [Your Name] - Director, Editor, and Cinematographer showcasing creative video work"
-        />
+        <meta name="description" content="Gianni Maratta - Portfolio" />
         <meta
             name="keywords"
-            content="director, editor, cinematographer, video portfolio"
+            content="filmmaker, editor, motion designer, davinci resolve, video portfolio"
         />
-        <meta name="author" content="[Your Name]" />
+        <meta name="author" content="Gianni Maratta" />
 
         <!-- Open Graph / Social Media -->
         <meta property="og:type" content="website" />
         <meta
             property="og:title"
-            content="[Your Name] - Director & Editor Portfolio"
+            content="Gianni Maratta - Filmmaker & Editor Portfolio"
         />
         <meta
             property="og:description"
@@ -27,7 +24,7 @@
         />
         <meta property="og:image" content="https://yoursite.com/og-image.jpg" />
 
-        <title>Portfolio - Director & Editor</title>
+        <title>Portfolio - Filmmaker & Editor</title>
 
         <link rel="stylesheet" href="css/main.css" />
     </head>
@@ -70,17 +67,46 @@
         <section class="hero-section" id="home">
             <video
                 class="hero-video"
+                id="hero-video"
                 autoplay
                 muted
                 loop
                 playsinline
-                poster="assets/hero-poster.jpg"
+                preload="auto"
+                poster="https://res.cloudinary.com/dzxnvphuz/video/upload/so_0.0,q_auto,f_jpg,w_1920/portfolio/hero-video.jpg"
                 aria-label="Hero background video"
             >
-                <source src="assets/hero-video.webm" type="video/webm" />
-                <source src="assets/hero-video.mp4" type="video/mp4" />
+                <!-- Desktop - Alta calidad (WebM) -->
+                <source
+                    media="(min-width: 769px)"
+                    src="https://res.cloudinary.com/dzxnvphuz/video/upload/q_auto:good,f_webm,g_auto/portfolio/hero-video.webm"
+                    type="video/webm"
+                />
+
+                <!-- Desktop - Alta calidad (MP4 fallback) -->
+                <source
+                    media="(min-width: 769px)"
+                    src="https://res.cloudinary.com/dzxnvphuz/video/upload/q_auto:good,f_mp4,g_auto/portfolio/hero-video.mp4"
+                    type="video/mp4"
+                />
+
+                <!-- Mobile - Calidad optimizada (WebM) -->
+                <source
+                    media="(max-width: 768px)"
+                    src="https://res.cloudinary.com/dzxnvphuz/video/upload/q_auto:low,f_webm,g_auto/portfolio/hero-video.webm"
+                    type="video/webm"
+                />
+
+                <!-- Mobile - Calidad optimizada (MP4 fallback) -->
+                <source
+                    media="(max-width: 768px)"
+                    src="https://res.cloudinary.com/dzxnvphuz/video/upload/q_auto:low,f_mp4,g_auto/portfolio/hero-video.mp4"
+                    type="video/mp4"
+                />
+
                 Your browser does not support the video tag.
             </video>
+
             <div class="hero-overlay">
                 <div class="hero-content">
                     <h2 class="hero-title">Filmmaker, Editor & Colorista</h2>
