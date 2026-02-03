@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- SEO Meta Tags -->
+        <meta
+            name="description"
+            content="Portfolio of [Your Name] - Director, Editor, and Cinematographer showcasing creative video work"
+        />
+        <meta
+            name="keywords"
+            content="director, editor, cinematographer, video portfolio"
+        />
+        <meta name="author" content="[Your Name]" />
+
+        <!-- Open Graph / Social Media -->
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:title"
+            content="[Your Name] - Director & Editor Portfolio"
+        />
+        <meta
+            property="og:description"
+            content="Creative video portfolio showcasing directing, editing, and cinematography work"
+        />
+        <meta property="og:image" content="https://yoursite.com/og-image.jpg" />
+
+        <title>Portfolio - Director & Editor</title>
+
+        <link rel="stylesheet" href="css/main.css" />
+    </head>
+    <body>
+        <!-- Mobile Navigation Overlay -->
+        <div
+            class="mobile-menu"
+            id="mobile-menu"
+            role="navigation"
+            aria-label="Mobile navigation"
+        >
+            <a href="#work" aria-label="View work">Trabajos</a>
+            <a href="#about" aria-label="About page">Info</a>
+            <a href="#contact" aria-label="Contact page">Contacto</a>
+        </div>
+
+        <!-- Header -->
+        <header>
+            <h1>GIANNI MARATTA</h1>
+            <nav
+                class="desktop-nav"
+                role="navigation"
+                aria-label="Main navigation"
+            >
+                <a href="#work">Trabajos</a>
+                <a href="#about">Info</a>
+                <a href="#contact">Contacto</a>
+            </nav>
+            <button
+                class="burger-btn"
+                aria-label="Toggle mobile menu"
+                aria-expanded="false"
+                aria-controls="mobile-menu"
+            >
+                <span class="burger-icon"></span>
+            </button>
+        </header>
+
+        <!-- Hero Video Section -->
+        <section class="hero-section" id="home">
+            <video
+                class="hero-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                poster="assets/hero-poster.jpg"
+                aria-label="Hero background video"
+            >
+                <source src="assets/hero-video.mp4" type="video/mp4" />
+                <source src="assets/hero-video.webm" type="video/webm" />
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <h2 class="hero-title">Filmmaker, Editor & Colorista</h2>
+                    <p class="hero-subtitle">Construyendo historias visuales</p>
+                    <a href="#work" class="hero-cta" aria-label="View my work"
+                        >Mis trabajos</a
+                    >
+                </div>
+            </div>
+            <button class="scroll-indicator" aria-label="Scroll down">
+                <span class="scroll-arrow"></span>
+            </button>
+        </section>
+
+        <!-- Main Portfolio Feed -->
+        <main id="portfolio-feed" role="main" aria-label="Portfolio projects">
+            <h2 class="section-heading" id="work">Trabajos Seleccionados</h2>
+        </main>
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+            <div class="about-container">
+                <div class="about-image">
+                    <img
+                        src="assets/images/profile.jpg"
+                        alt="Gianni Maratta - Filmmaker, Editor y Colorista"
+                        loading="lazy"
+                    />
+                </div>
+                <div class="about-content">
+                    <h2 class="section-heading">Sobre mí</h2>
+                    <p>
+                        Soy un filmmaker y editor, apasionado por contar
+                        historias visuales. En constante aprendizaje, me
+                        especializo en contruir una narrativa visual que le
+                        llegue a las personas.
+                    </p>
+                    <p>
+                        Mis trabajo varía desde bodas, eventos, coberturas y
+                        ficciones. Creo que el video junto con el montaje son
+                        esenciales para construir una identidad visual.
+                    </p>
+                    <div class="about-skills">
+                        <h3>Skills & Experiencia</h3>
+                        <ul>
+                            <li>Dirección y Filmmaking</li>
+                            <li>Edición y Color (DaVinci Resolve)</li>
+                            <li>Motion Graphics (After Effects)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="contact-container">
+                <h2 class="section-heading">¿Te gustaría trabajar conmigo?</h2>
+                <p class="contact-intro">
+                    ¿Algún proyecto en mente? Me encantaria saber más...
+                </p>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            required
+                            aria-required="true"
+                            placeholder="Tú nombre"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            aria-required="true"
+                            placeholder="tu.email@ejemplo.com"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="project">Tipo de Proyecto</label>
+                        <select
+                            id="project"
+                            name="project"
+                            required
+                            aria-required="true"
+                        >
+                            <option value="">Elegir tipo de proyecto</option>
+                            <option value="commercial">Comercial</option>
+                            <option value="music-video">Video Musical</option>
+                            <option value="narrative">Narrativo</option>
+                            <option value="documentary">Documental</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="5"
+                            required
+                            aria-required="true"
+                            placeholder="Contame sobre tu proyecto..."
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Enviar</button>
+                </form>
+
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>Email</h3>
+                        <a href="mailto:marattagian15@gmail.com"
+                            >marattagian15@gmail.com</a
+                        >
+                    </div>
+                    <div class="contact-item">
+                        <h3>Social</h3>
+                        <div class="social-links">
+                            <a
+                                href="https://www.instagram.com/giannmaratta/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Instagram"
+                                >Instagram</a
+                            >
+                            <a
+                                href="https://vimeo.com/yourhandle"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Vimeo"
+                                >Vimeo</a
+                            >
+                            <a
+                                href="https://youtube.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="LinkedIn"
+                                >YouTube</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 Your Name. All rights reserved.</p>
+        </footer>
+
+        <!-- Video Lightbox Modal -->
+        <div
+            id="lightbox"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Video player"
+        >
+            <button class="close-btn" aria-label="Close video">&times;</button>
+            <div class="video-wrapper">
+                <iframe
+                    id="video-player"
+                    src=""
+                    title="Project video"
+                    allow="autoplay; fullscreen"
+                    allowfullscreen
+                >
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="js/projects-data.js"></script>
+        <script src="js/portfolio.js"></script>
+        <script src="js/lightbox.js"></script>
+        <script src="js/navigation.js"></script>
+        <script src="js/contact.js"></script>
+        <script src="js/hero.js"></script>
+    </body>
+</html>
