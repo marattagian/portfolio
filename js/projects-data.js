@@ -54,8 +54,8 @@ const projects = [
     }),
 
     // Video completo (YouTube/Vimeo)
-    videoID: "qFdSlvkQ-CM",
-    platform: "youtube",
+    videoID: "1166868305",
+    platform: "vimeo",
   },
   {
     title: "Real State",
@@ -71,7 +71,7 @@ const projects = [
       width: 800,
     }),
 
-    videoID: "1161221236",
+    videoID: "1166831484",
     platform: "vimeo",
   },
   {
@@ -88,8 +88,8 @@ const projects = [
       width: 800,
     }),
 
-    videoID: "PcBxHz0ozxM",
-    platform: "youtube",
+    videoID: "1166868565",
+    platform: "vimeo",
   },
 ];
 
