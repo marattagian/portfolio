@@ -58,7 +58,7 @@ const projects = [
     platform: "vimeo",
   },
   {
-    title: "Real State",
+    title: "Real Estate",
     role: "Piloto de Dron / Editor",
 
     cloudinaryId: "portfolio/dron-loop", // ⚠️ CAMBIAR
